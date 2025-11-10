@@ -13,7 +13,7 @@ bool visited[N][N];
 int dr[4] = {-1, 0, 1, 0};
 int dc[4] = {0, 1, 0, -1};
 
-\bool valid(int r, int c) {
+bool valid(int r, int c) {
     return (r >= 0 && c >= 0 && r < N && c < N);
 }
 
@@ -93,4 +93,5 @@ int main() {
 
     return 0;
 }
+
 
