@@ -6,10 +6,8 @@ from collections import deque
 from matplotlib.colors import ListedColormap
 import time
 
-# ---------------------- PAGE CONFIG ----------------------
 st.set_page_config(page_title="Maze Generator & Solver", layout="wide", page_icon="🧩")
 
-# ---------------------- CUSTOM CSS ----------------------
 custom_css = """
 <style>
 [data-testid="stAppViewContainer"] {
@@ -63,12 +61,10 @@ hr {
 """
 st.markdown(custom_css, unsafe_allow_html=True)
 
-# ---------------------- HEADER ----------------------
 st.markdown("<h1>🧩 Maze Generator & Solver</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align:center;'>DFS Maze Generation | BFS Path Solving | Group 3</h3>", unsafe_allow_html=True)
 st.markdown("<hr>", unsafe_allow_html=True)
 
-# ---------------------- INPUTS ----------------------
 st.subheader("🎯 Maze Configuration")
 
 colA, colB, colC = st.columns(3)
@@ -81,7 +77,6 @@ with colC:
 
 seed_input = st.text_input("Enter random seed (optional):", value="")
 
-# ---------------------- LOGIC ----------------------
 DIRS = [(-1, 0), (1, 0), (0, -1), (0, 1)]
 
 def generate_maze_grid(r_cells, c_cells, seed=None):
@@ -179,7 +174,6 @@ def visualize(grid, path_cells=None, scale_factor=8):
     plt.tight_layout()
     return fig
 
-# ---------------------- BUTTON ----------------------
 center_col = st.columns([1, 2, 1])[1]
 with center_col:
     if st.button("🚀 Generate & Solve Maze"):
@@ -209,7 +203,6 @@ with center_col:
                     placeholder.pyplot(fig2)
                     time.sleep(0.05)
 
-            # ---------------------- EXPLANATION ----------------------
             st.markdown("<div class='card'><h3>🧠 Step-by-Step Explanation of BFS Solving</h3>", unsafe_allow_html=True)
             explanation = f"""
             - The **Breadth-First Search (BFS)** algorithm starts at the **top-left corner (0,0)**.  
@@ -237,3 +230,4 @@ This interactive *Maze Generator and Solver* demonstrates two fundamental **grap
 - Azadpreet Singh (24BCS10082)  
 - Jashandeep Singh (24BCS10068)
 """)
+
